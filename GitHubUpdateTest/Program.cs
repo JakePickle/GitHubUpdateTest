@@ -13,8 +13,10 @@ namespace GitHubUpdateTest
                 var github = new GitHubClient(new ProductHeaderValue("MyAmazingApp"));
                 var user = await github.User.Get("tymorrow");
                 var repo = await github.Repository.GetBranch("tymorrow", "Launch-Pad", "master");
+                var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");
                 Console.WriteLine(user.Followers + " people follow Ty Morrow");
                 Console.WriteLine(repo.Commit.Sha);
+                Console.WriteLine(releases.Count);
             }); 
 
             Console.Write("Console Test");
