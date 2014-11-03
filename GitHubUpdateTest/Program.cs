@@ -7,6 +7,8 @@ namespace GitHubUpdateTest
         static void Main(string[] args)
         {
             Console.Write("Console Test");
+            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }
