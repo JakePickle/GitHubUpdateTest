@@ -10,7 +10,7 @@ namespace GitHubUpdateTest
         {
             Task.Run(async () =>
             {
-                var github = new GitHubClient(new ProductHeaderValue("MyAmazingApp"));
+                var github = new GitHubClient(new ProductHeaderValue(""));
                 var user = await github.User.Get("tymorrow");
                 var repo = await github.Repository.GetBranch("tymorrow", "Launch-Pad", "master");
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");
@@ -20,8 +20,7 @@ namespace GitHubUpdateTest
                 Console.WriteLine(releases[0].TagName);
             }); 
 
-            Console.Write("Console Test");
-            Console.WriteLine();
+            Console.WriteLine("Console Test");
             Console.ReadLine();
         }
     }

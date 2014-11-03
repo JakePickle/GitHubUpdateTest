@@ -6,3 +6,4 @@ E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\Octokit.dll
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\Octokit.xml
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.exe
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.pdb
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.csprojResolveAssemblyReference.cache
