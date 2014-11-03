@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Octokit</id>
+    <version>0.5.2</version>
+    <authors>GitHub</authors>
+    <owners>GitHub</owners>
+    <licenseUrl>https://github.com/octokit/octokit.net/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/octokit/octokit.net</projectUrl>
+    <iconUrl>https://f.cloud.github.com/assets/19977/1441274/160fba8c-41a9-11e3-831d-61d88fa886f4.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An async-based GitHub API client library for .NET</description>
+    <summary>An async-based GitHub API client library for .NET</summary>
+    <releaseNotes>New: Method to add repository to team - #546 via @kevfromireland
+Fixed: PATCH parameters for releases, issues and pull requests are now nullable - #561 via @thedillonb
+Breaking Changes:**
+- `PullRequestUpdate` removed unused fields: `Number`, `State`, `Base`, and `Head`
+- `ReleaseClient.Create` now accepts a `NewRelease` parameter (was `ReleaseUpdate`)
+- `ReleaseUpdate` no longer requires a `TagName` in the constructor (see `NewRelease`)
+- `ReleaseUpdate` now has nullable `Draft` and `Prerelease` properties - only
+set these if you want to apply changes to the API
+- `IssueUpdate.State` is now a nullable `ItemState`
+- `MilestoneUpdate.Number` is now removed
+- `MilestoneUpdate.State` is now a nullable `ItemState`</releaseNotes>
+    <copyright>Copyright GitHub 2013</copyright>
+    <tags>GitHub API Octokit</tags>
+    <dependencies>
+      <group>
+        <dependency id="Microsoft.Net.Http" />
+      </group>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="Windows0.0" />
+      <group targetFramework=".NETPortable0.0-win81+wpa81" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.5, .NETCore4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
