@@ -1,2 +1,7 @@
 C:\Users\ThePickle\AppData\Local\Temporary Projects\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe.config
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe.config
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.pdb
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.csprojResolveAssemblyReference.cache
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.exe
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.pdb
