@@ -1,0 +1,2 @@
+C:\Users\ThePickle\AppData\Local\Temporary Projects\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe.config
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe.config
