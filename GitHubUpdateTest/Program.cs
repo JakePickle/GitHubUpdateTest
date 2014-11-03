@@ -17,6 +17,7 @@ namespace GitHubUpdateTest
                 Console.WriteLine(user.Followers + " people follow Ty Morrow");
                 Console.WriteLine(repo.Commit.Sha);
                 Console.WriteLine(releases.Count);
+                Console.WriteLine(releases[0].TagName);
             }); 
 
             Console.Write("Console Test");
