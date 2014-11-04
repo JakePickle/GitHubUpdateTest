@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Octokit;
+using System;
+using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Threading.Tasks;
-using Octokit;
 
 namespace GitHubUpdateTest
 {
