@@ -9,6 +9,7 @@ namespace GitHubUpdateTest
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             Task.Run(async () =>
             {
                 var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
