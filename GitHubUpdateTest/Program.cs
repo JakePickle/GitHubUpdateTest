@@ -43,7 +43,13 @@ namespace GitHubUpdateTest
                 zipPath = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + releases[0].TagName + ".zip";
                 extractPath = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
                 Console.WriteLine("Extracting Archive");
-                ZipFile.ExtractToDirectory(zipPath, extractPath);
+                using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+                {
+                    foreach (ZipArchiveEntry entry in archive.Entries)
+                    {
+                        entry.ExtractToFile(Path.Combine(extractPath, entry.FullName),true/*overwrite*/);
+                    }
+                } 
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
 
             }); 
