@@ -9,7 +9,8 @@ namespace GitHubUpdateTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8));
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            Console.WriteLine(dir);
 
             Task.Run(async () =>
             {
