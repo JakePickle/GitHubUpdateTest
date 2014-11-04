@@ -12,6 +12,7 @@ namespace GitHubUpdateTest
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            string zipPath, extractPath;
             Console.WriteLine(dir);
 
             Task.Run(async () =>
@@ -39,6 +40,11 @@ namespace GitHubUpdateTest
                     @dir.Substring(0,dir.Length-20/*length of executables name including .exe*/) + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
+                zipPath = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + releases[0].TagName + ".zip";
+                extractPath = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
+                Console.WriteLine("Extracting Archive");
+                ZipFile.ExtractToDirectory(zipPath, extractPath);
+                Console.WriteLine("Extraction Complete\nPress enter to end.");
 
             }); 
 
