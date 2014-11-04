@@ -33,7 +33,8 @@ namespace GitHubUpdateTest
                 Console.WriteLine("Downloading Latest Version("+ releases[0].TagName +") of Rover Engagement Display");
 
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://github.com/MST-MRDT/Rover-Engagement-Display/releases/download/" + releases[0].TagName + "/RED-" + releases[0].TagName + ".zip", @"c:\users\ThePickle\downloads\RED-" + releases[0].TagName + ".zip");
+                webClient.DownloadFile("https://github.com/MST-MRDT/Rover-Engagement-Display/releases/download/" + releases[0].TagName + "/RED-" + releases[0].TagName + ".zip",
+                    @dir.Substring(0,dir.Length-20/*length of executables name including .exe*/) + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
 
