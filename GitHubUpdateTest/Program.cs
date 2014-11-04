@@ -9,7 +9,8 @@ namespace GitHubUpdateTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8));
+
             Task.Run(async () =>
             {
                 var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
@@ -34,8 +35,6 @@ namespace GitHubUpdateTest
                 webClient.DownloadFile("https://github.com/MST-MRDT/Rover-Engagement-Display/releases/download/" + releases[0].TagName + "/RED-" + releases[0].TagName + ".zip", @"c:\users\ThePickle\downloads\RED-" + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
-
-                //https://github.com/JakePickle/GitHubUpdateTest/releases/download/0.0.2/GitHubUpdateTest.exe
 
             }); 
 
