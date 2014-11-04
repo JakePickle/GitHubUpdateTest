@@ -29,7 +29,7 @@ namespace GitHubUpdateTest
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release of RED
 
-                Console.WriteLine("Downloading Latest Version of Rover Engagement Display");
+                Console.WriteLine("Downloading Latest Version("+ releases[0].TagName +") of Rover Engagement Display");
 
                 WebClient webClient = new WebClient();
                 webClient.DownloadFile("https://github.com/MST-MRDT/Rover-Engagement-Display/releases/download/" + releases[0].TagName + "/RED-" + releases[0].TagName + ".zip", @"c:\users\ThePickle\downloads\RED-" + releases[0].TagName + ".zip");
