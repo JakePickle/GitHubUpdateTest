@@ -10,7 +10,7 @@ namespace GitHubUpdateTest
         {
             Task.Run(async () =>
             {
-                var github = new GitHubClient(new ProductHeaderValue(""));//Creates link to github
+                var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
 
                 var user = await github.User.Get("tymorrow");//saves tymorrow's information to a user variable
 
