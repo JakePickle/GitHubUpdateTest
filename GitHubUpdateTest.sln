@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubUpdateTest", "GitHubUpdateTest\GitHubUpdateTest.csproj", "{3978975F-76E3-4811-8BAC-45DFD456FB8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updater", "updater\updater.csproj", "{2080A655-9B86-4D7C-B7CA-623ED758D15F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3978975F-76E3-4811-8BAC-45DFD456FB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3978975F-76E3-4811-8BAC-45DFD456FB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3978975F-76E3-4811-8BAC-45DFD456FB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2080A655-9B86-4D7C-B7CA-623ED758D15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2080A655-9B86-4D7C-B7CA-623ED758D15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2080A655-9B86-4D7C-B7CA-623ED758D15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2080A655-9B86-4D7C-B7CA-623ED758D15F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
