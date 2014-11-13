@@ -1,5 +1,6 @@
 ﻿using Octokit;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace GitHubUpdateTest
@@ -16,6 +17,10 @@ namespace GitHubUpdateTest
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
+
+                Process notePad = new Process();
+                notePad.StartInfo.FileName = "notepad.exe";
+                notePad.Start();
 
             });
 
