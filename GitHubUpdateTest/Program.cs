@@ -19,10 +19,9 @@ namespace GitHubUpdateTest
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
 
-                Process notePad = new Process();
-                Console.WriteLine(dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + "updater.exe");
-                notePad.StartInfo.FileName = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/)+"/updater.exe";
-                notePad.Start();
+                Process updater = new Process();
+                updater.StartInfo.FileName = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + "/updater.exe";
+                updater.Start();
 
                 System.Environment.Exit(1);
             });
