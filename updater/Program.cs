@@ -38,7 +38,8 @@ namespace updater
                 {
                     foreach (ZipArchiveEntry entry in archive.Entries)
                     {
-                        entry.ExtractToFile(Path.Combine(extractPath, entry.FullName), true/*overwrite*/);
+                        if (entry.FullName.Substring(0, 7) != "updater" && entry.FullName.Substring(0, 7) != "Octokit")
+                            entry.ExtractToFile(Path.Combine(extractPath, entry.FullName), true/*overwrite*/);
                     }
                 }
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
