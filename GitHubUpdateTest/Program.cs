@@ -9,6 +9,7 @@ namespace GitHubUpdateTest
     {
         static void Main(string[] args)
         {
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
 
             Task.Run(async () =>
             {
@@ -19,9 +20,11 @@ namespace GitHubUpdateTest
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
 
                 Process notePad = new Process();
-                notePad.StartInfo.FileName = "notepad.exe";
+                Console.WriteLine(dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + "updater.exe");
+                notePad.StartInfo.FileName = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/)+"/updater.exe";
                 notePad.Start();
 
+                System.Environment.Exit(1);
             });
 
             Console.ReadLine();
