@@ -44,11 +44,12 @@ namespace updater
                     }
                 }
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
+                Console.WriteLine(dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe");
 
-                Console.ReadLine();
+                //Console.ReadLine();
 
                 Process updateTest = new Process();
-                updateTest.StartInfo.FileName = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/) + "/GitHubUpdateTest.exe";
+                updateTest.StartInfo.FileName = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe";
                 updateTest.Start();
 
                 System.Environment.Exit(1);
