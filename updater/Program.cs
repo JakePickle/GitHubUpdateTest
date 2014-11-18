@@ -46,7 +46,12 @@ namespace updater
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
                 Console.WriteLine(dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe");
 
-                //Console.ReadLine();
+                string[] zipList = Directory.GetFiles(dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/), "*.zip");
+
+                foreach (string f in zipList)
+                {
+                    File.Delete(f);
+                }
 
                 Process updateTest = new Process();
                 updateTest.StartInfo.FileName = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe";
