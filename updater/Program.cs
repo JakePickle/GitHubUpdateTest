@@ -13,7 +13,8 @@ namespace updater
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
-            string zipPath, extractPath;
+            string zipPath;
+            dir = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/);
             Console.WriteLine(dir);
 
             Task.Run(async () =>
@@ -28,25 +29,24 @@ namespace updater
 
                 WebClient webClient = new WebClient();
                 webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/GitHubUpdateTest.zip",
-                    @dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + releases[0].TagName + ".zip");
+                    dir + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
-                zipPath = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + releases[0].TagName + ".zip";
-                extractPath = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/);
-                Console.WriteLine(extractPath);
+                zipPath = dir + releases[0].TagName + ".zip";
+                Console.WriteLine(dir);
                 Console.WriteLine("Extracting Archive");
                 using (ZipArchive archive = ZipFile.OpenRead(zipPath))
                 {
                     foreach (ZipArchiveEntry entry in archive.Entries)
                     {
                         if (entry.FullName.Substring(0, 7) != "updater" && entry.FullName.Substring(0, 7) != "Octokit")
-                            entry.ExtractToFile(Path.Combine(extractPath, entry.FullName), true/*overwrite*/);
+                            entry.ExtractToFile(Path.Combine(dir, entry.FullName), true/*overwrite*/);
                     }
                 }
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
-                Console.WriteLine(dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe");
+                Console.WriteLine(dir + "GitHubUpdateTest.exe");
 
-                string[] zipList = Directory.GetFiles(dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/), "*.zip");
+                string[] zipList = Directory.GetFiles(dir, "*.zip");
 
                 foreach (string f in zipList)
                 {
@@ -54,7 +54,7 @@ namespace updater
                 }
 
                 Process updateTest = new Process();
-                updateTest.StartInfo.FileName = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/) + "GitHubUpdateTest.exe";
+                updateTest.StartInfo.FileName = dir + "GitHubUpdateTest.exe";
                 updateTest.Start();
 
                 System.Environment.Exit(1);
