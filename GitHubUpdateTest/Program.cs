@@ -21,19 +21,15 @@ namespace GitHubUpdateTest
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
                 
                 string fileName;
-                string sourcePath = dir;
                 Console.WriteLine(dir);
                 string targetPath = dir.Substring(0,dir.Length-6)+"Test/";
                 Console.WriteLine(targetPath);
-
-                // Use Path class to manipulate file and directory paths.
-                string sourceFile = System.IO.Path.Combine(sourcePath);
-                string destFile = System.IO.Path.Combine(targetPath);
+                string destFile;
 
 
-                if (System.IO.Directory.Exists(sourcePath))
+                if (System.IO.Directory.Exists(dir))
                 {
-                    string[] files = System.IO.Directory.GetFiles(sourcePath);
+                    string[] files = System.IO.Directory.GetFiles(dir);
 
                     // Copy the files and overwrite destination files if they already exist.
                     foreach (string s in files)
