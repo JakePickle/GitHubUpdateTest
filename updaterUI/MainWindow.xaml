@@ -7,7 +7,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="75*" />
         </Grid.ColumnDefinitions>
         <TextBox x:Name="Text" Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Background="Black" Foreground="WhiteSmoke" 
                  Grid.RowSpan="4" Margin="1" VerticalScrollBarVisibility="Auto"/>

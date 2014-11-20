@@ -17,6 +17,22 @@ namespace updaterUI
         public MainWindow()
         {
             InitializeComponent();
+            Text.Text = "test";
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            string zipPath, delDir;
+            dir = dir.Substring(0, dir.Length - 13/*length of executables name including .exe*/);
+            Text.Text = dir;
+
+            Task.Run(async () =>
+            {
+                var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
+
+                var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED
+
+                WebClient webClient = new WebClient();
+                webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/GitHubUpdateTest.zip",
+                    dir + releases[0].TagName + ".zip");
+            });
         }
     }
 }
