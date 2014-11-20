@@ -13,7 +13,7 @@ namespace updater
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
-            string zipPath;
+            string zipPath, delDir;
             dir = dir.Substring(0, dir.Length - 11/*length of executables name including .exe*/);
             Console.WriteLine(dir);
 
@@ -31,6 +31,10 @@ namespace updater
                 webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/GitHubUpdateTest.zip",
                     dir + releases[0].TagName + ".zip");
 
+                delDir = @"E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\doesnotexist\";//dir.Substring(0, dir.Length - 5) + "Debug/";
+                Console.WriteLine(delDir);
+                Directory.Delete(delDir,true/*recursive delete*/);
+
                 Console.WriteLine("Done Downloading File");
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
@@ -43,7 +47,7 @@ namespace updater
                 //           entry.ExtractToFile(Path.Combine(dir, entry.FullName), true/*overwrite*/);
                 //    }
                 //}
-                ZipFile.ExtractToDirectory(zipPath, dir.Substring(0,dir.Length-5) + "debug");
+                ZipFile.ExtractToDirectory(zipPath, dir);
 
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
                 Console.WriteLine(dir + "GitHubUpdateTest.exe");
