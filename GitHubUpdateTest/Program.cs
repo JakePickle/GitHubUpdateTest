@@ -26,7 +26,6 @@ namespace GitHubUpdateTest
                 Console.WriteLine(targetPath);
                 string destFile;
 
-
                 if (System.IO.Directory.Exists(dir))
                 {
                     string[] files = System.IO.Directory.GetFiles(dir);

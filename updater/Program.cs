@@ -35,14 +35,16 @@ namespace updater
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
                 Console.WriteLine("Extracting Archive");
-                using (ZipArchive archive = ZipFile.OpenRead(zipPath))
-                {
-                    foreach (ZipArchiveEntry entry in archive.Entries)
-                    {
-                        if (entry.FullName.Substring(0, 7) != "updater" && entry.FullName.Substring(0, 7) != "Octokit")
-                            entry.ExtractToFile(Path.Combine(dir, entry.FullName), true/*overwrite*/);
-                    }
-                }
+                //using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+                //{
+                //    foreach (ZipArchiveEntry entry in archive.Entries)
+                //    {
+                //        if (entry.FullName.Substring(0, 7) != "updater" && entry.FullName.Substring(0, 7) != "Octokit")
+                //           entry.ExtractToFile(Path.Combine(dir, entry.FullName), true/*overwrite*/);
+                //    }
+                //}
+                ZipFile.ExtractToDirectory(zipPath, dir.Substring(0,dir.Length-5) + "debug");
+
                 Console.WriteLine("Extraction Complete\nPress enter to end.");
                 Console.WriteLine(dir + "GitHubUpdateTest.exe");
 
