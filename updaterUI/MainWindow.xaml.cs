@@ -40,6 +40,8 @@ namespace updaterUI
                 Console.WriteLine("Deleted " + delDir);
                 Directory.Delete(delDir, true/*recursive delete*/);
 
+                Directory.CreateDirectory(delDir);//Recreates empty delDir
+
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
                 Console.WriteLine("Extracting Archive");
