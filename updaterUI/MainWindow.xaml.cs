@@ -42,6 +42,21 @@ namespace updaterUI
                 zipPath = dir + releases[0].TagName + ".zip";
 
                 ZipFile.ExtractToDirectory(zipPath, dir.Substring(0, dir.Length - 19) + "Test/");
+
+                Console.WriteLine("Extraction Complete");
+
+                string[] zipList = Directory.GetFiles(dir, "*.zip");
+
+                foreach (string f in zipList)
+                {
+                    File.Delete(f);
+                }
+
+                Process updateTest = new Process();
+                updateTest.StartInfo.FileName = dir + "GitHubUpdateTest.exe";
+                updateTest.Start();
+
+                System.Environment.Exit(1);
             });
         }
     }
