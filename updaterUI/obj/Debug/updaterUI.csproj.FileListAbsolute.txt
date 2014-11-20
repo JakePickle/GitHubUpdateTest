@@ -1,0 +1,15 @@
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Debug\updaterUI.exe.config
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Debug\updaterUI.exe
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Debug\updaterUI.pdb
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Debug\Octokit.dll
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Debug\Octokit.xml
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csprojResolveAssemblyReference.cache
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.baml
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.g.cs
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\App.g.cs
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI_MarkupCompile.cache
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.g.resources
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.Properties.Resources.resources
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
+E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb

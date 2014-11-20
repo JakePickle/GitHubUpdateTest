@@ -3,6 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="Text" Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Background="Black" Foreground="WhiteSmoke" 
+                 Grid.RowSpan="4" Margin="1" VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
