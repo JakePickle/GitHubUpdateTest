@@ -17,11 +17,10 @@ namespace updaterUI
         public MainWindow()
         {
             InitializeComponent();
-            Text.Text = "test";
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            Text.Text = dir.Substring(0,dir.Length-19)+"Test/";
             string zipPath, delDir;
             dir = dir.Substring(0, dir.Length - 13/*length of executables name including .exe*/);
-            Text.Text = dir;
 
             Task.Run(async () =>
             {
@@ -29,9 +28,20 @@ namespace updaterUI
 
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED
 
+                Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest");
+
                 WebClient webClient = new WebClient();
                 webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/GitHubUpdateTest.zip",
                     dir + releases[0].TagName + ".zip");
+
+                Console.WriteLine("Done Downloading File");
+                zipPath = dir + releases[0].TagName + ".zip";
+                Console.WriteLine(dir);
+                Console.WriteLine("Extracting Archive");
+
+                zipPath = dir + releases[0].TagName + ".zip";
+
+                ZipFile.ExtractToDirectory(zipPath, dir.Substring(0, dir.Length - 19) + "Test/");
             });
         }
     }
