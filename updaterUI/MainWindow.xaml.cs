@@ -40,7 +40,8 @@ namespace updaterUI
                 Console.WriteLine("Deleted " + delDir);
                 Directory.Delete(delDir, true/*recursive delete*/);
 
-                Directory.CreateDirectory(delDir);//Recreates empty delDir
+                DirectoryInfo di = Directory.CreateDirectory(delDir);//Recreates empty delDir
+                Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(delDir));
 
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);

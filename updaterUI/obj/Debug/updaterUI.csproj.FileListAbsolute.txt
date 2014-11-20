@@ -13,3 +13,6 @@ E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.Properties.Resources
 E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
 E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
 E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe.config
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe
+E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.pdb
