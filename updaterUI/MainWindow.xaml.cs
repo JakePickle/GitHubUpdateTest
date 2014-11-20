@@ -35,6 +35,11 @@ namespace updaterUI
                     dir + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
+
+                delDir = @"E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Test\";//dir.Substring(0, dir.Length - 5) + "Debug/";
+                Console.WriteLine("Deleted " + delDir);
+                Directory.Delete(delDir, true/*recursive delete*/);
+
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
                 Console.WriteLine("Extracting Archive");
