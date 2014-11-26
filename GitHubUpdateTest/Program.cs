@@ -43,7 +43,7 @@ namespace GitHubUpdateTest
                 }
 
                 Process updater = new Process();
-                updater.StartInfo.FileName = targetPath + "updater.exe";
+                updater.StartInfo.FileName = targetPath + "updaterUI.exe";
                 updater.Start();
 
                 System.Environment.Exit(1);
