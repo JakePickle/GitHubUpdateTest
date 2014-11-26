@@ -36,7 +36,7 @@ namespace updaterUI
 
                 Console.WriteLine("Done Downloading File");
 
-                delDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Test";//dir.Substring(0, dir.Length - 5) + "Debug/";
+                delDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug";//dir.Substring(0, dir.Length - 5) + "Debug/";
                 Console.WriteLine("Deleted " + delDir);
                 Directory.Delete(delDir, true/*recursive delete*/);
 
