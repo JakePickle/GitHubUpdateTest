@@ -49,7 +49,7 @@ namespace updaterUI
 
                 zipPath = dir + releases[0].TagName + ".zip";
 
-                ZipFile.ExtractToDirectory(zipPath, dir.Substring(0, dir.Length - 19) + "Test/");
+                ZipFile.ExtractToDirectory(zipPath, @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug");
 
                 Console.WriteLine("Extraction Complete");
 
