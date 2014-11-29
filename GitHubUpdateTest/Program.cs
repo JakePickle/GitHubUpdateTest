@@ -10,6 +10,15 @@ namespace GitHubUpdateTest
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            int vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MajorRevision);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision);
+
+            Console.Read();
+
             dir = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
 
             Task.Run(async () =>
