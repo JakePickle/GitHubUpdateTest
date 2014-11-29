@@ -16,6 +16,7 @@ namespace GitHubUpdateTest
             Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MajorRevision);
             Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision);
             Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision);
+            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build);
 
             Console.Read();
 
