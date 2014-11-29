@@ -31,6 +31,21 @@ namespace GitHubUpdateTest
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
 
                 string[] nums = releases[0].TagName.Split('.');
+
+                if(int.Parse(nums[0])<major)
+                {
+                    System.Environment.Exit(1);
+                }
+
+                if (int.Parse(nums[1]) < minor)
+                {
+                    System.Environment.Exit(1);
+                }
+
+                if (int.Parse(nums[2]) < build)
+                {
+                    System.Environment.Exit(1);
+                }
                 
                 string fileName;
                 Console.WriteLine(dir);
@@ -60,8 +75,6 @@ namespace GitHubUpdateTest
 
                 System.Environment.Exit(1);
             });
-
-            while (true) { };
 
             Console.ReadLine();
             
