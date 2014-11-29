@@ -11,12 +11,14 @@ namespace GitHubUpdateTest
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
             int vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major);
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor);
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MajorRevision);
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision);
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision);
-            Console.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build);
+            int major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
+            int minor = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor;
+            int majorRev = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MajorRevision;//Dont know what these
+            int minorRev = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision;//two are for
+            int Revision = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision;
+            int build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build;
+
+            Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
 
             Console.Read();
 
