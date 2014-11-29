@@ -20,8 +20,6 @@ namespace GitHubUpdateTest
 
             Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
 
-            Console.Read();
-
             dir = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
 
             Task.Run(async () =>
@@ -31,6 +29,8 @@ namespace GitHubUpdateTest
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
+
+                string[] nums = releases[0].TagName.Split('.');
                 
                 string fileName;
                 Console.WriteLine(dir);
@@ -60,6 +60,8 @@ namespace GitHubUpdateTest
 
                 System.Environment.Exit(1);
             });
+
+            while (true) { };
 
             Console.ReadLine();
             
