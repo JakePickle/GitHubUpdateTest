@@ -36,9 +36,9 @@ namespace updaterUI
 
                 Console.WriteLine("Done Downloading File");
 
-                delDir = @"E:\MRDTRepos\GitHubUpdateTest\updaterUI\bin\Test\";//dir.Substring(0, dir.Length - 5) + "Debug/";
-                Console.WriteLine("Deleted " + delDir);
+                delDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug";//dir.Substring(0, dir.Length - 5) + "Debug/";
                 Directory.Delete(delDir, true/*recursive delete*/);
+                Console.WriteLine("Deleted " + delDir);
 
                 DirectoryInfo di = Directory.CreateDirectory(delDir);//Recreates empty delDir
                 Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(delDir));
@@ -49,7 +49,7 @@ namespace updaterUI
 
                 zipPath = dir + releases[0].TagName + ".zip";
 
-                ZipFile.ExtractToDirectory(zipPath, dir.Substring(0, dir.Length - 19) + "Test/");
+                ZipFile.ExtractToDirectory(zipPath, @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug");
 
                 Console.WriteLine("Extraction Complete");
 

@@ -10,6 +10,16 @@ namespace GitHubUpdateTest
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            int vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
+            int major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
+            int minor = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor;
+            int majorRev = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MajorRevision;//Dont know what these
+            int minorRev = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision;//two are for
+            int Revision = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision;
+            int build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build;
+
+            Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
+
             dir = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
 
             Task.Run(async () =>
@@ -19,6 +29,23 @@ namespace GitHubUpdateTest
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
+
+                string[] nums = releases[0].TagName.Split('.');
+
+                if(int.Parse(nums[0])<major)
+                {
+                    System.Environment.Exit(1);
+                }
+
+                if (int.Parse(nums[1]) < minor)
+                {
+                    System.Environment.Exit(1);
+                }
+
+                if (int.Parse(nums[2]) < build)
+                {
+                    System.Environment.Exit(1);
+                }
                 
                 string fileName;
                 Console.WriteLine(dir);
@@ -43,7 +70,7 @@ namespace GitHubUpdateTest
                 }
 
                 Process updater = new Process();
-                updater.StartInfo.FileName = targetPath + "updater.exe";
+                updater.StartInfo.FileName = targetPath + "updaterUI.exe";
                 updater.Start();
 
                 System.Environment.Exit(1);

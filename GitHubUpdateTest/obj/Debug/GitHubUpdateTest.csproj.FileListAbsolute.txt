@@ -7,3 +7,11 @@ E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\Octokit.xml
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.exe
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.pdb
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.csprojResolveAssemblyReference.cache
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe.config
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.exe
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.pdb
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.exe
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\GitHubUpdateTest.pdb
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\Octokit.dll
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\Octokit.xml
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\obj\Debug\GitHubUpdateTest.csprojResolveAssemblyReference.cache

@@ -16,3 +16,16 @@ E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe.config
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe
 E:\MRDTRepos\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.pdb
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe.config
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.pdb
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csprojResolveAssemblyReference.cache
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.baml
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.g.cs
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\App.g.cs
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI_MarkupCompile.cache
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.g.resources
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.Properties.Resources.resources
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
+C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
