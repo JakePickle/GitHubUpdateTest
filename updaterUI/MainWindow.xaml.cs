@@ -36,7 +36,7 @@ namespace updaterUI
 
                 Console.WriteLine("Done Downloading File");
 
-                delDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug";//dir.Substring(0, dir.Length - 5) + "Debug/";
+                delDir = dir.Substring(0, dir.Length - 5) + "Debug/";
                 Directory.Delete(delDir, true/*recursive delete*/);
                 Console.WriteLine("Deleted " + delDir);
 
@@ -47,9 +47,7 @@ namespace updaterUI
                 Console.WriteLine(dir);
                 Console.WriteLine("Extracting Archive");
 
-                zipPath = dir + releases[0].TagName + ".zip";
-
-                ZipFile.ExtractToDirectory(zipPath, @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug");
+                ZipFile.ExtractToDirectory(zipPath, delDir);
 
                 Console.WriteLine("Extraction Complete");
 
@@ -61,7 +59,7 @@ namespace updaterUI
                 }
 
                 Process updateTest = new Process();
-                updateTest.StartInfo.FileName = dir + "GitHubUpdateTest.exe";
+                updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
                 updateTest.Start();
 
                 System.Environment.Exit(1);
