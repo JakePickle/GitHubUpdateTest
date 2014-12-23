@@ -26,7 +26,15 @@ namespace updaterUI
             {
                 var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
 
-                var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED
+                var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED   
+
+                delDir = dir.Substring(0, dir.Length - 5) + "Debug/";
+                Console.WriteLine("Deleting Directory:" + delDir);
+                Directory.Delete(delDir, true);
+                Console.WriteLine("Deleted " + delDir);
+
+                DirectoryInfo di = Directory.CreateDirectory(delDir);//Recreates empty delDir
+                Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(delDir));
 
                 Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest");
 
@@ -35,13 +43,6 @@ namespace updaterUI
                     dir + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
-
-                delDir = dir.Substring(0, dir.Length - 5) + "Debug/";
-                Directory.Delete(delDir, true/*recursive delete*/);
-                Console.WriteLine("Deleted " + delDir);
-
-                DirectoryInfo di = Directory.CreateDirectory(delDir);//Recreates empty delDir
-                Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(delDir));
 
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
@@ -58,9 +59,9 @@ namespace updaterUI
                     File.Delete(f);
                 }
 
-                Process updateTest = new Process();
-                updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
-                updateTest.Start();
+                //Process updateTest = new Process();
+                //updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
+                //updateTest.Start();
 
                 System.Environment.Exit(1);
             });
