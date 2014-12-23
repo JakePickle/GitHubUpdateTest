@@ -6,6 +6,9 @@ using System.IO.Compression;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
+using System.ComponentModel;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace updaterUI
 {
@@ -40,6 +43,11 @@ namespace updaterUI
 
                 Console.WriteLine("Deleted");
 
+                await this.Dispatcher.BeginInvoke((Action)delegate()
+                {
+                    ProgressBar.Value = 20;
+                });
+
                 Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest");
 
                 WebClient webClient = new WebClient();
@@ -47,6 +55,11 @@ namespace updaterUI
                     dir + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
+
+                await this.Dispatcher.BeginInvoke((Action)delegate()
+                {
+                    ProgressBar.Value = 50;
+                });
 
                 zipPath = dir + releases[0].TagName + ".zip";
                 Console.WriteLine(dir);
@@ -56,6 +69,11 @@ namespace updaterUI
 
                 Console.WriteLine("Extraction Complete");
 
+                await this.Dispatcher.BeginInvoke((Action)delegate()
+                {
+                    ProgressBar.Value = 75;
+                });
+
                 zipList = Directory.GetFiles(dir, "*.zip");
 
                 foreach (string f in zipList)
@@ -63,9 +81,19 @@ namespace updaterUI
                     File.Delete(f);
                 }
 
+                await this.Dispatcher.BeginInvoke((Action)delegate()
+                {
+                    ProgressBar.Value = 95;
+                });
+
                 Process updateTest = new Process();
                 updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
                 updateTest.Start();
+
+                await this.Dispatcher.BeginInvoke((Action)delegate()
+                {
+                    ProgressBar.Value = 100;
+                });
 
                 System.Environment.Exit(1);
             });
