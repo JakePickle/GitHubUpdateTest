@@ -56,8 +56,11 @@ namespace GitHubUpdateTest
                 string tarDir;
 
                 tarDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Test";//dir.Substring(0, dir.Length - 5) + "Debug/";
-                DirectoryInfo di = Directory.CreateDirectory(tarDir);
-                Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(tarDir));
+                if (!System.IO.Directory.Exists(tarDir))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(tarDir);
+                    Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(tarDir));
+                }          
 
                 if (System.IO.Directory.Exists(dir))
                 {
