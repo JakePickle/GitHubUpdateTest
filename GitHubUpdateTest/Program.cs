@@ -50,12 +50,10 @@ namespace GitHubUpdateTest
                 
                 string fileName;
                 Console.WriteLine(dir);
-                string targetPath = dir.Substring(0,dir.Length-6)+"Test/";
-                Console.WriteLine(targetPath);
+                string tarDir = dir.Substring(0,dir.Length-6)+"Test\\";
+                Console.WriteLine(tarDir);
                 string destFile;
-                string tarDir;
 
-                tarDir = @"C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Test";//dir.Substring(0, dir.Length - 5) + "Debug/";
                 if (!System.IO.Directory.Exists(tarDir))
                 {
                     DirectoryInfo di = Directory.CreateDirectory(tarDir);
@@ -71,7 +69,7 @@ namespace GitHubUpdateTest
                     {
                         // Use static Path methods to extract only the file name from the path.
                         fileName = System.IO.Path.GetFileName(s);
-                        destFile = System.IO.Path.Combine(targetPath, fileName);
+                        destFile = System.IO.Path.Combine(tarDir, fileName);
                         System.IO.File.Copy(s, destFile, true);
 
                         Console.WriteLine("did file: " + fileName);
@@ -79,7 +77,7 @@ namespace GitHubUpdateTest
                 }
 
                 Process updater = new Process();
-                updater.StartInfo.FileName = targetPath + "updaterUI.exe";
+                updater.StartInfo.FileName = tarDir + "updaterUI.exe";
                 updater.Start();
 
                 System.Environment.Exit(1);
