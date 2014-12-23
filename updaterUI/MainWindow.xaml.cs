@@ -20,6 +20,7 @@ namespace updaterUI
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
             Text.Text = dir.Substring(0,dir.Length-19)+"Test/";
             string zipPath, delDir;
+            string[] zipList, delList;
             dir = dir.Substring(0, dir.Length - 13/*length of executables name including .exe*/);
 
             Task.Run(async () =>
@@ -29,12 +30,15 @@ namespace updaterUI
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED   
 
                 delDir = dir.Substring(0, dir.Length - 5) + "Debug/";
-                Console.WriteLine("Deleting Directory:" + delDir);
-                Directory.Delete(delDir, true);
-                Console.WriteLine("Deleted " + delDir);
+                Console.WriteLine("Deleting contents of:" + delDir);
+                delList = Directory.GetFiles(delDir);
 
-                DirectoryInfo di = Directory.CreateDirectory(delDir);//Recreates empty delDir
-                Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(delDir));
+                foreach (string f in delList)
+                {
+                    File.Delete(f);
+                }
+
+                Console.WriteLine("Deleted");
 
                 Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest");
 
@@ -52,16 +56,16 @@ namespace updaterUI
 
                 Console.WriteLine("Extraction Complete");
 
-                string[] zipList = Directory.GetFiles(dir, "*.zip");
+                zipList = Directory.GetFiles(dir, "*.zip");
 
                 foreach (string f in zipList)
                 {
                     File.Delete(f);
                 }
 
-                //Process updateTest = new Process();
-                //updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
-                //updateTest.Start();
+                Process updateTest = new Process();
+                updateTest.StartInfo.FileName = delDir + "GitHubUpdateTest.exe";
+                updateTest.Start();
 
                 System.Environment.Exit(1);
             });
