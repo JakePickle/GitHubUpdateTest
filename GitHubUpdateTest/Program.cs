@@ -30,7 +30,7 @@ namespace GitHubUpdateTest
 
                 Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
 
-                string[] nums = releases[0].TagName.Split('.');
+                /*string[] nums = releases[0].TagName.Split('.'); Code to check if update is needed, needs to be commented for testing.
 
                 if(int.Parse(nums[0])<major)
                 {
@@ -45,7 +45,7 @@ namespace GitHubUpdateTest
                 if (int.Parse(nums[2]) < build)
                 {
                     System.Environment.Exit(1);
-                }
+                }*/
                 
                 string fileName;
                 Console.WriteLine(dir);
