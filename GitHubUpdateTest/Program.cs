@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 
 namespace GitHubUpdateTest
 {
@@ -18,71 +19,76 @@ namespace GitHubUpdateTest
             int minorRev = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.MinorRevision;//two are for
             int Revision = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision;
             int build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build;
+            Ping pingClass = new Ping();
+            PingReply reply;
 
             Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
 
             dir = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
 
-            Task.Run(async () =>
-            {
-                var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
-
-                var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases
-
-                Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
-
-                /*string[] nums = releases[0].TagName.Split('.'); Code to check if update is needed, needs to be commented for testing.
-
-                if(int.Parse(nums[0])<major)
+            reply = pingClass.Send("github.com");
+            if (reply.Status == IPStatus.Success)
+            {         
+                Task.Run(async () =>
                 {
-                    System.Environment.Exit(1);
-                }
+                    var github = new GitHubClient(new ProductHeaderValue("name"));//Creates link to github
 
-                if (int.Parse(nums[1]) < minor)
-                {
-                    System.Environment.Exit(1);
-                }
+                    var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases
 
-                if (int.Parse(nums[2]) < build)
-                {
-                    System.Environment.Exit(1);
-                }*/
-                
-                string fileName;
-                Console.WriteLine(dir);
-                string tarDir = dir.Substring(0,dir.Length-6)+"Test\\";
-                Console.WriteLine(tarDir);
-                string destFile;
+                    Console.WriteLine(releases[0].TagName);//Prints the tag of the latest release
 
-                if (!System.IO.Directory.Exists(tarDir))
-                {
-                    DirectoryInfo di = Directory.CreateDirectory(tarDir);
-                    Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(tarDir));
-                }          
+                    /*string[] nums = releases[0].TagName.Split('.'); Code to check if update is needed, needs to be commented for testing.
 
-                if (System.IO.Directory.Exists(dir))
-                {
-                    string[] files = System.IO.Directory.GetFiles(dir);
-
-                    // Copy the files and overwrite destination files if they already exist.
-                    foreach (string s in files)
+                    if(int.Parse(nums[0])<major)
                     {
-                        // Use static Path methods to extract only the file name from the path.
-                        fileName = System.IO.Path.GetFileName(s);
-                        destFile = System.IO.Path.Combine(tarDir, fileName);
-                        System.IO.File.Copy(s, destFile, true);
-
-                        Console.WriteLine("did file: " + fileName);
+                        System.Environment.Exit(1);
                     }
-                }
 
-                Process updater = new Process();
-                updater.StartInfo.FileName = tarDir + "updaterUI.exe";
-                updater.Start();
+                    if (int.Parse(nums[1]) < minor)
+                    {
+                        System.Environment.Exit(1);
+                    }
 
-                System.Environment.Exit(1);
-            });
+                    if (int.Parse(nums[2]) < build)
+                    {
+                        System.Environment.Exit(1);
+                    }*/
+                
+                    string fileName;
+                    Console.WriteLine(dir);
+                    string tarDir = dir.Substring(0,dir.Length-6)+"Test\\";
+                    Console.WriteLine(tarDir);
+                    string destFile;
 
+                    if (!System.IO.Directory.Exists(tarDir))
+                    {
+                        DirectoryInfo di = Directory.CreateDirectory(tarDir);
+                        Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(tarDir));
+                    }          
+
+                    if (System.IO.Directory.Exists(dir))
+                    {
+                        string[] files = System.IO.Directory.GetFiles(dir);
+
+                        // Copy the files and overwrite destination files if they already exist.
+                        foreach (string s in files)
+                        {
+                            // Use static Path methods to extract only the file name from the path.
+                            fileName = System.IO.Path.GetFileName(s);
+                            destFile = System.IO.Path.Combine(tarDir, fileName);
+                            System.IO.File.Copy(s, destFile, true);
+
+                            Console.WriteLine("did file: " + fileName);
+                        }
+                    }
+
+                    Process updater = new Process();
+                    updater.StartInfo.FileName = tarDir + "updaterUI.exe";
+                    updater.Start();
+
+                    System.Environment.Exit(1);
+                });
+            }
             Console.ReadLine();
             
         }
