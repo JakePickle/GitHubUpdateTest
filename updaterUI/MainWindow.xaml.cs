@@ -21,10 +21,16 @@ namespace updaterUI
         {
             InitializeComponent();
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
-            Text.Text = dir.Substring(0,dir.Length-19)+"Test/";
+            string running = System.AppDomain.CurrentDomain.FriendlyName;
+            Text.Text = dir;//dir.Substring(0,dir.Length-19)+"Test/";
             string zipPath, delDir;
             string[] zipList, delList;
-            dir = dir.Substring(0, dir.Length - 13/*length of executables name including .exe*/);
+
+            dir = dir.Substring(0, dir.Length - 1);
+            while (dir[dir.Length - 1] != '/')
+            {
+                dir = dir.Substring(0, dir.Length - 1);
+            }
 
             Task.Run(async () =>
             {

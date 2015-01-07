@@ -12,6 +12,8 @@ namespace GitHubUpdateTest
         static void Main(string[] args)
         {
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
+            string running = System.AppDomain.CurrentDomain.FriendlyName;
+            string binDir = dir.Substring(0, dir.Length - running.Length);
             int vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
             int major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major;
             int minor = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor;
@@ -22,9 +24,13 @@ namespace GitHubUpdateTest
             Ping pingClass = new Ping();
             PingReply reply;
 
-            Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
+            dir = dir.Substring(0, dir.Length-1);
+            while (dir[dir.Length - 1] != '/')
+            {
+                dir = dir.Substring(0, dir.Length - 1);
+            }
 
-            dir = dir.Substring(0, dir.Length - 20/*length of executables name including .exe*/);
+            Console.WriteLine(major + "." + minor + "." + build + "." + Revision);
 
             reply = pingClass.Send("github.com");
             if (reply.Status == IPStatus.Success)
@@ -56,7 +62,7 @@ namespace GitHubUpdateTest
                 
                     string fileName;
                     Console.WriteLine(dir);
-                    string tarDir = dir.Substring(0,dir.Length-6)+"Test\\";
+                    string tarDir = binDir +"/Test/";
                     Console.WriteLine(tarDir);
                     string destFile;
 
@@ -64,7 +70,7 @@ namespace GitHubUpdateTest
                     {
                         DirectoryInfo di = Directory.CreateDirectory(tarDir);
                         Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(tarDir));
-                    }          
+                    }
 
                     if (System.IO.Directory.Exists(dir))
                     {
