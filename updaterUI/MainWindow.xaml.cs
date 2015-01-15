@@ -20,6 +20,7 @@ namespace updaterUI
         public MainWindow()
         {
             InitializeComponent();
+            const string originalFolder = "Debug";
             string dir = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8);
             string running = System.AppDomain.CurrentDomain.FriendlyName;
             Text.Text = dir;//dir.Substring(0,dir.Length-19)+"Test/";
@@ -38,8 +39,16 @@ namespace updaterUI
 
                 var releases = await github.Release.GetAll("JakePickle", "GitHubUpdateTest");//gets all releases of RED   
 
-                delDir = dir.Substring(0, dir.Length - 5) + "Debug/";
-                Console.WriteLine("Deleting contents of:" + delDir);
+                delDir = dir.Substring(0, dir.Length - 1);
+
+                while (delDir[delDir.Length - 1] != '/')
+                {
+                    delDir = delDir.Substring(0, delDir.Length - 1);
+                }
+
+                delDir = delDir + originalFolder + "/";
+
+                Console.WriteLine("Deleting contents of: " + delDir);
                 delList = Directory.GetFiles(delDir);
 
                 foreach (string f in delList)

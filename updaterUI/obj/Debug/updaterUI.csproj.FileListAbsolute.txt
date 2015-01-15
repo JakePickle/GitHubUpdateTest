@@ -28,4 +28,3 @@ C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
-E:\MRDTRepos\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csprojResolveAssemblyReference.cache
