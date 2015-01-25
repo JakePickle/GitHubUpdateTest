@@ -62,7 +62,14 @@ namespace GitHubUpdateTest
                 
                     string fileName;
                     Console.WriteLine(dir);
-                    string tarDir = binDir +"/Test/";
+
+                    string tarDir = dir.Substring(0, dir.Length - 1);
+                    while (tarDir[tarDir.Length - 1] != '/')
+                    {
+                        tarDir = tarDir.Substring(0, tarDir.Length - 1);
+                    }
+
+                    tarDir += "Test/";
                     Console.WriteLine(tarDir);
                     string destFile;
 

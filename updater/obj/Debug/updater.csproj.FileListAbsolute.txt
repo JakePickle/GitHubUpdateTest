@@ -14,3 +14,9 @@ C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\upd
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.csprojResolveAssemblyReference.cache
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.exe
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.pdb
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updater.exe.config
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updater.exe
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updater.pdb
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.csprojResolveAssemblyReference.cache
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.exe
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updater\obj\Debug\updater.pdb

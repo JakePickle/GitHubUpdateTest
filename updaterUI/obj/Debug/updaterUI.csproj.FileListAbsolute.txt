@@ -28,3 +28,16 @@ C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
 C:\Users\Pickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe.config
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.exe
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\GitHubUpdateTest\bin\Debug\updaterUI.pdb
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csprojResolveAssemblyReference.cache
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.baml
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\MainWindow.g.cs
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\App.g.cs
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI_MarkupCompile.cache
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.g.resources
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.Properties.Resources.resources
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.csproj.GenerateResource.Cache
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.exe
+C:\Users\ThePickle\Documents\GitHub\GitHubUpdateTest\updaterUI\obj\Debug\updaterUI.pdb
