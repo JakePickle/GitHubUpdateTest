@@ -63,10 +63,10 @@ namespace updaterUI
                     ProgressBar.Value = 20;
                 });
 
-                Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest");
+                Console.WriteLine("Downloading Latest Version(" + releases[0].TagName + ") of GitHubUpdateTest to : " + dir);
 
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/GitHubUpdateTest.zip",
+                webClient.DownloadFile("https://github.com/JakePickle/GitHubUpdateTest/releases/download/" + releases[0].TagName + "/1.1.0.zip",
                     dir + releases[0].TagName + ".zip");
 
                 Console.WriteLine("Done Downloading File");
